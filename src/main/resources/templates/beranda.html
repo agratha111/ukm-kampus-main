@@ -14,15 +14,21 @@
 
 @media (max-width: 600px) {
   .burger { display: block; }
+  
   .nav-links { 
-    display: none; /* Sembunyikan menu secara default di HP */
+    display: none; /* Sembunyikan default */
     flex-direction: column; 
     width: 100%; 
     text-align: center;
     padding-top: 15px;
   }
-  .nav-links.active { display: flex; } /* Tampilkan saat diklik */
+
+  /* TAMBAHKAN INI AGAR MENU MUNCUL KETIKA DIKLIK */
+  .nav-links.active { 
+    display: flex !important; 
   }
+}
+  .nav-links.active { display: flex; } /* Tampilkan saat diklik */
     /* Navigasi */
     .header-nav { background-color: #0c004d; color: white; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
