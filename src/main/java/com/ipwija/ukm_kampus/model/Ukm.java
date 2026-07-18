@@ -34,7 +34,7 @@ public class Ukm {
         this.kontakWa = kontakWa; 
     }
 
-    // Constructor lengkap (Opsional tapi sangat membantu di Controller)
+    // Constructor lengkap (Opsional tapi sangat membantu di 
     public Ukm(String nama, String kontakWa, String visi, String misi) {
         this.nama = nama;
         this.kontakWa = kontakWa;
