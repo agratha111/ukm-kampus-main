@@ -124,11 +124,38 @@
         </div>
     </main>
 
-    <!-- Script untuk Toggle Menu -->
     <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+    function kirimWa() {
+        // 1. Ambil data dari input
+        const nama = document.getElementById("nama").value;
+        const nim = document.getElementById("nim").value;
+        const kelas = document.getElementById("kelas").value;
+        const prodi = document.getElementById("prodi").value;
+        
+        // 2. Ambil data dari select (nomor WA dan nama UKM)
+        const select = document.getElementById("ukmSelect");
+        const waNumber = select.value; // Nomor WA dari th:value
+        const ukmName = select.options[select.selectedIndex].text; // Nama UKM dari teks
+        
+        // 3. Validasi sederhana: Cek apakah semua sudah diisi
+        if (nama === "" || nim === "" || kelas === "" || prodi === "" || waNumber === "") {
+            alert("Mohon lengkapi semua data dan pilih UKM terlebih dahulu!");
+            return;
         }
-    </script>
+
+        // 4. Susun pesan (gunakan %0A untuk enter/ganti baris)
+        const pesan = "Halo, saya ingin mendaftar UKM " + ukmName + ".\n\n" +
+              "Data Diri:\n" +
+              "- Nama: " + nama + "\n" +
+              "- NIM: " + nim + "\n" +
+              "- Kelas: " + kelas + "\n" +
+              "- Prodi: " + prodi;
+
+        // 5. Buat URL dan buka di tab baru
+        const url = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(pesan);
+        
+        window.open(url, '_blank');
+    }
+        </script>
 </body>
 </html>
